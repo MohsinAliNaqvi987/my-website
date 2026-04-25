@@ -9,13 +9,13 @@ export function ContactSection() {
           </p>
           <div className="space-y-3 text-sm">
             <p>
-              <span className="font-semibold text-white">Email:</span> your-email@example.com
+              <span className="font-semibold text-white">Email:</span> mohsin.ali.naqvi987@gmail.com
             </p>
             <p>
-              <span className="font-semibold text-white">Phone:</span> +92 300 1234567
+              <span className="font-semibold text-white">Phone:</span> +92 333 5321812
             </p>
             <p>
-              <span className="font-semibold text-white">Address:</span> Your city, Pakistan
+              <span className="font-semibold text-white">Address:</span> Rawalpindi, Pakistan
             </p>
           </div>
         </div>
