@@ -12,13 +12,13 @@ export function Footer({ scrollToSection }: FooterProps) {
           <p className="text-sm font-medium text-slate-300">Full Stack Developer building scalable web applications.</p>
 
           <div className="flex justify-center gap-6 text-sm font-semibold">
-            <button type="button" onClick={() => scrollToSection("about")} className="transition hover:text-sky-300">
+            <button type="button" onClick={() => scrollToSection("about")} className="cursor-pointer transition hover:text-sky-300">
               About
             </button>
-            <button type="button" onClick={() => scrollToSection("portfolio")} className="transition hover:text-sky-300">
+            <button type="button" onClick={() => scrollToSection("portfolio")} className="cursor-pointer transition hover:text-sky-300">
               Portfolio
             </button>
-            <button type="button" onClick={() => scrollToSection("contact")} className="transition hover:text-sky-300">
+            <button type="button" onClick={() => scrollToSection("contact")} className="cursor-pointer transition hover:text-sky-300">
               Contact
             </button>
           </div>
@@ -53,7 +53,7 @@ export function Footer({ scrollToSection }: FooterProps) {
         <div className="flex flex-wrap items-center justify-between gap-2 border-t border-slate-800 pt-4">
           <p className="text-sm text-slate-400">&copy; {new Date().getFullYear()} Mohsin Naqvi. All rights reserved.</p>
           <p className="text-sm text-slate-300">
-            Made with <span className="text-red-500">❤</span> using Next.js
+            Made with <span className="text-red-500">❤</span> using Next.js & Tailwind CSS
           </p>
         </div>
       </div>

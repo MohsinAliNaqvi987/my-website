@@ -16,6 +16,7 @@ export function HomeSection({ scrollToSection }: HomeSectionProps) {
           <h1 className="text-4xl font-extrabold leading-tight text-slate-900 sm:text-5xl">
             Hi, I&apos;m Mohsin Naqvi.
           </h1>
+          <h3 className="text-2xl font-bold">Full Stack MERN Developer</h3>
           <p className="max-w-xl text-lg leading-8 text-slate-700">
             I build modern and responsive web experiences with a focus on clean design,
             performance, and user-friendly interfaces.
@@ -24,7 +25,7 @@ export function HomeSection({ scrollToSection }: HomeSectionProps) {
             <button
               type="button"
               onClick={() => scrollToSection("contact")}
-              className="inline-flex items-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700"
+              className="cursor-pointer inline-flex items-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700"
             >
               Get In Touch
             </button>
