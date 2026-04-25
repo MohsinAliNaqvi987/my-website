@@ -11,11 +11,17 @@ export type ResumeItem = {
 };
 
 export const skills: Skill[] = [
+  { name: "React / Next.js", level: 85 },
   { name: "HTML & CSS", level: 95 },
   { name: "JavaScript / TypeScript", level: 88 },
-  { name: "React / Next.js", level: 86 },
   { name: "Tailwind CSS", level: 90 },
+  { name: "NestJS", level: 75 },
   { name: "Node.js", level: 78 },
+  { name: "SQL", level: 85 },
+  { name: "MongoDB", level: 75 },
+  { name: "Docker", level: 65 },
+  { name: "Git", level: 80 },
+  { name: "CI/CD", level: 65 },
 ];
 
 export const projectPlaceholders = [
