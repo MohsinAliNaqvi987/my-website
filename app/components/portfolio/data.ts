@@ -51,6 +51,7 @@ export const skillsByCategory: SkillCategory[] = [
     title: "DevOps",
     skills: [
       { name: "CI/CD", level: 65 },
+      { name: "Github Actions", level: 50 }
     ],
   },
 ];
