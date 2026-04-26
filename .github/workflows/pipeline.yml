@@ -33,4 +33,4 @@ jobs:
 
       # Step 6: Deploy the application to Vercel
       - name: Deploy the application to Vercel
-        run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
+        run: vercel deploy --prod --yes --token ${{ secrets.VERCEL_TOKEN }}
