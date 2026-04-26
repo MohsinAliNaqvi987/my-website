@@ -16,7 +16,8 @@ jobs:
       # Step 2: Install Node.js with specifies version
       - name: Install Node.js
         uses: actions/setup-node@v3
-        with: node-version: 20.19.0
+        with: 
+          node-version: 20.19.0
 
       # Step 3: Install dependencies
       - name: Install dependencies
