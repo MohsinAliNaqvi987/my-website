@@ -15,6 +15,15 @@ export type ResumeItem = {
   detail: string;
 };
 
+export type Project = {
+  id: number;
+  name: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  link?: string;
+};
+
 export const skillsByCategory: SkillCategory[] = [
   {
     title: "Frontend",
@@ -56,10 +65,34 @@ export const skillsByCategory: SkillCategory[] = [
   },
 ];
 
-export const projectPlaceholders = [
-  "Project One",
-  "Project Two",
-  "Project Three",
+export const projectPlaceholders: Project[] = [
+  {
+    id: 1,
+    name: "Technical Evaluation Management System, ZONG",
+    description: "Developed a Technical Evaluation Management System (TEMS) for Zong to streamline vendor technical evaluations and collaboration between internal teams and external vendors. Built the frontend using React.js with Next.js and backend using Laravel, implementing role-based workflows for Super Admins, Admins, Sourcing Buyers, Experts, and Vendors to manage evaluations efficiently.",
+    image: "/TEMS.png",
+    technologies: ["Next.js", "Laravel", "MySQL", "Docker", "MinIO (S3 compatible storage)", "Swagger/OpenAPI"],
+  },
+  {
+    id: 2,
+    name: "WAPDA Website",
+    description: `WAPDA website and Admin/CMS built with a NestJS micro services backend and React frontends.
+    Backend: API Gateway (Routing, Rate limiting, Authentication), Auth (JWT, Roles, Permissions, Employees), CMS (Content, Categories, Reservoirs), and Assets (File storage, S3). Stack: NestJS, MongoDB, Redis, AWS S3, TypeScript.
+    Frontend: Public website (React.js, Material-UI, Redux/Saga, data grids, rich editor, PDF/Excel export).`,
+    image: "/Wapda.jpg",
+    technologies: ["React.js", "Material-UI", "Redux/Saga", "TypeScript", "NestJS", "MongoDB", "Redis", "AWS S3"],
+    link: "https://wapda.gov.pk/",
+  },
+  {
+    id: 3,
+    name: "Jazztunes (Music Entertainment Platform)",
+    description: `Frontend: React.js with Redux & Redux-Saga for state management, React Router, Material-UI, Axios, and i18next for localization. Containerized deployment using Docker.
+    Backend: Node.js and Express.js with REST APIs secured via JWT authentication. Database management using MySQL with Knex.js & Bookshelf ORM, Redis for caching, and Swagger/OpenAPI for API documentation. Integrated Firebase Admin for push notifications.
+    `,
+    image: "/jazz-tunes.jpg",
+    technologies: ["React.js", "Node.js", "Redux", "Redis", "Docker", "Express.js", "MySQL", "Firebase", "Knex.js", "Bookshelf ORM", "Swagger/OpenAPI"],
+    link: "https://jazz-tunes.pk/",
+  },
 ];
 
 export const education: ResumeItem[] = [
