@@ -13,11 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mohsin Ali | Portfolio",
-  description: "Personal one-page portfolio website of Mohsin Ali",
+  title: "Mohsin Naqvi | Full Stack Developer",
+  description: "Personal one-page portfolio website of Mohsin Naqvi",
   icons: {
-    icon: [{ url: "/Logo-MN.png", type: "image/png" }],
-    apple: [{ url: "/Logo-MN.png", type: "image/png" }],
+    icon: [{ url: "/Logo-MN-mobile.png", type: "image/png" }],
+    apple: [{ url: "/Logo-MN-mobile.png", type: "image/png" }],
   },
 };
 

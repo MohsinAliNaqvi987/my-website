@@ -18,8 +18,18 @@ export function Navbar({
           type="button"
           onClick={() => scrollToSection("home")}
           className="group cursor-pointer"
+          aria-label="Home"
         >
-          <img src="/Logo-MN.png" alt="Logo" className="h-10 w-10 origin-center transition-transform duration-300 ease-out group-hover:scale-105"/>
+          <img
+            src="/Logo-MN-mobile.png"
+            alt="Logo"
+            className="h-10 w-10 origin-center transition-transform duration-300 ease-out group-hover:scale-105 md:hidden"
+          />
+          <img
+            src="/Logo-MN-web.png"
+            alt="Logo"
+            className="hidden h-8 w-auto shrink-0 origin-center object-contain transition-transform duration-300 ease-out group-hover:scale-105 md:block lg:h-9"
+          />
         </button>
         <div className="hidden flex-wrap items-center gap-3 text-sm font-medium text-slate-700 md:flex">
           <button type="button" onClick={() => scrollToSection("home")} className="nav-link cursor-pointer">

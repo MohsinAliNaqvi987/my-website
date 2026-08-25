@@ -10,7 +10,7 @@ export function HomeSection({ scrollToSection }: HomeSectionProps) {
     <section id="home" className="section-padding">
       <div className="mx-auto grid w-full max-w-6xl items-center gap-12 md:grid-cols-2">
         <div className="space-y-6">
-          <p className="inline-block rounded-full bg-sky-100 px-4 py-1 text-sm font-semibold text-sky-700">
+          <p className="inline-block rounded-full bg-black px-4 py-1 text-sm font-semibold text-white">
             Welcome to my portfolio
           </p>
           <h1 className="text-4xl font-extrabold leading-tight text-slate-900 sm:text-5xl">
