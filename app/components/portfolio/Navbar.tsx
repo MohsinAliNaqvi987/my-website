@@ -17,9 +17,9 @@ export function Navbar({
         <button
           type="button"
           onClick={() => scrollToSection("home")}
-          className="cursor-pointer text-xl font-bold tracking-tight text-slate-800"
+          className="group cursor-pointer"
         >
-          Mohsin
+          <img src="/Logo-MN.png" alt="Logo" className="h-10 w-10 origin-center transition-transform duration-300 ease-out group-hover:scale-105"/>
         </button>
         <div className="hidden flex-wrap items-center gap-3 text-sm font-medium text-slate-700 md:flex">
           <button type="button" onClick={() => scrollToSection("home")} className="nav-link cursor-pointer">

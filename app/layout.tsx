@@ -15,6 +15,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Mohsin Ali | Portfolio",
   description: "Personal one-page portfolio website of Mohsin Ali",
+  icons: {
+    icon: [{ url: "/Logo-MN.png", type: "image/png" }],
+    apple: [{ url: "/Logo-MN.png", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({
