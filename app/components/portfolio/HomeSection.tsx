@@ -39,16 +39,14 @@ export function HomeSection({ scrollToSection }: HomeSectionProps) {
           </div>
         </div>
         <div className="flex justify-center md:justify-end">
-          <div className="profile-ring">
-            <Image
-              src="/profile.png"
-              alt="Portrait of Mohsin Ali"
-              width={320}
-              height={320}
-              priority
-              className="h-72 w-72 rounded-full object-cover sm:h-80 sm:w-80"
-            />
-          </div>
+          <Image
+            src="/profile.jpg"
+            alt="Portrait of Mohsin Naqvi"
+            width={1086}
+            height={1448}
+            priority
+            className="h-auto w-64 object-contain sm:w-72 md:w-80"
+          />
         </div>
       </div>
     </section>

@@ -49,10 +49,6 @@ summary,
   @apply rounded-full px-3 py-1.5 transition hover:bg-slate-100 hover:text-slate-900;
 }
 
-.profile-ring {
-  @apply rounded-full bg-gradient-to-br from-sky-300 via-indigo-300 to-cyan-300 p-1.5 shadow-xl;
-}
-
 .skill-fill {
   height: 100%;
   border-radius: 999px;
