@@ -12,12 +12,30 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "http://localhost:3000");
+
+const title = "Mohsin Naqvi | Full Stack Developer";
+const description = "Personal one-page portfolio website of Mohsin Naqvi";
+
 export const metadata: Metadata = {
-  title: "Mohsin Naqvi | Full Stack Developer",
-  description: "Personal one-page portfolio website of Mohsin Naqvi",
-  icons: {
-    icon: [{ url: "/Logo-MN-mobile.png", type: "image/png" }],
-    apple: [{ url: "/Logo-MN-mobile.png", type: "image/png" }],
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    url: siteUrl,
+    siteName: "Mohsin Naqvi",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
   },
 };
 
