@@ -28,7 +28,7 @@ export function buildContactEmail(fields: ContactFields) {
     `Re: Portfolio inquiry from ${fields.name}`,
   )}`;
 
-  const subject = `New portfolio message from ${fields.name}`;
+  const subject = `Portfolio message from ${fields.name}`;
 
   const text = [
     "Portfolio Contact Message",
@@ -46,7 +46,7 @@ export function buildContactEmail(fields: ContactFields) {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>New Portfolio Contact Message</title>
+    <title>Portfolio Contact Message</title>
   </head>
   <body style="margin:0;padding:0;background-color:#f1f5f9;font-family:Arial,Helvetica,sans-serif;color:#0f172a;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f1f5f9;padding:24px 12px;">
@@ -56,7 +56,7 @@ export function buildContactEmail(fields: ContactFields) {
             <tr>
               <td style="background-color:#0f172a;padding:28px 32px;">
                 <p style="margin:0 0 6px;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#94a3b8;">Mohsin Naqvi</p>
-                <h1 style="margin:0;font-size:22px;line-height:1.3;color:#ffffff;">New Portfolio Contact Message</h1>
+                <h1 style="margin:0;font-size:22px;line-height:1.3;color:#ffffff;">Portfolio Contact Message</h1>
               </td>
             </tr>
             <tr>
