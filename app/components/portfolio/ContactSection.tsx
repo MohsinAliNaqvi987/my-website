@@ -1,4 +1,57 @@
+"use client";
+
+import { FormEvent, useState } from "react";
+
+type FormStatus = "idle" | "submitting" | "success" | "error";
+
 export function ContactSection() {
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [feedback, setFeedback] = useState("");
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    if (status === "submitting") return;
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    setStatus("submitting");
+    setFeedback("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          message: formData.get("message"),
+          company_url: formData.get("company_url"),
+        }),
+      });
+
+      const payload = (await response.json().catch(() => null)) as
+        | { ok?: boolean; error?: string }
+        | null;
+
+      if (!response.ok) {
+        setStatus("error");
+        setFeedback(payload?.error ?? "Failed to send your message. Please try again.");
+        return;
+      }
+
+      form.reset();
+      setStatus("success");
+      setFeedback("Thanks — your message has been sent.");
+    } catch {
+      setStatus("error");
+      setFeedback("Failed to send your message. Please try again.");
+    }
+  }
+
+  const isSubmitting = status === "submitting";
+
   return (
     <section id="contact" className="section-padding bg-white">
       <div className="mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-2">
@@ -91,38 +144,78 @@ export function ContactSection() {
             </li>
           </ul>
         </div>
-        <form className="rounded-2xl border border-slate-200 bg-slate-50 p-7 shadow-sm">
+        <form
+          onSubmit={handleSubmit}
+          className="relative rounded-2xl border border-slate-200 bg-slate-50 p-7 shadow-sm"
+        >
           <h3 className="text-2xl font-bold text-slate-800">Get in Touch</h3>
+          <div className="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden="true">
+            <label>
+              Company URL
+              <input type="text" name="company_url" tabIndex={-1} autoComplete="off" />
+            </label>
+          </div>
           <div className="mt-6 space-y-4">
             <label className="block">
               <span className="mb-2 block text-sm font-medium text-slate-700">Name</span>
               <input
                 type="text"
+                name="name"
+                required
+                minLength={2}
+                maxLength={80}
                 placeholder="Your name"
-                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-slate-500"
+                autoComplete="name"
+                disabled={isSubmitting}
+                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-slate-500 disabled:opacity-60"
               />
             </label>
             <label className="block">
               <span className="mb-2 block text-sm font-medium text-slate-700">Email</span>
               <input
                 type="email"
+                name="email"
+                required
+                maxLength={254}
                 placeholder="you@example.com"
-                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-slate-500"
+                autoComplete="email"
+                disabled={isSubmitting}
+                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-slate-500 disabled:opacity-60"
               />
             </label>
             <label className="block">
               <span className="mb-2 block text-sm font-medium text-slate-700">Message</span>
               <textarea
+                name="message"
                 rows={5}
+                required
+                minLength={10}
+                maxLength={5000}
                 placeholder="Write your message..."
-                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-slate-500"
+                disabled={isSubmitting}
+                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-slate-500 disabled:opacity-60"
               />
             </label>
+            {feedback ? (
+              <p
+                role="status"
+                aria-live="polite"
+                className={
+                  status === "success"
+                    ? "rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800"
+                    : "rounded-lg border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800"
+                }
+              >
+                {feedback}
+              </p>
+            ) : null}
             <button
               type="submit"
-              className="cursor-pointer rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700"
+              disabled={isSubmitting}
+              aria-busy={isSubmitting}
+              className="cursor-pointer rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-60"
             >
-              Send Message
+              {isSubmitting ? "Sending..." : "Send Message"}
             </button>
           </div>
         </form>
