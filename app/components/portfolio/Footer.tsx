@@ -8,7 +8,7 @@ export function Footer({ scrollToSection }: FooterProps) {
   return (
     <footer className="border-t border-slate-200 bg-slate-950 text-slate-100">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 py-8">
-        <div className="grid items-center gap-6 md:grid-cols-3">
+        <div className="flex flex-col items-center gap-6 text-center md:grid md:grid-cols-3 md:items-center md:text-left">
           <p className="text-sm font-medium text-slate-300">Full Stack Developer building scalable web applications.</p>
 
           <div className="flex justify-center gap-6 text-sm font-semibold">
@@ -50,7 +50,7 @@ export function Footer({ scrollToSection }: FooterProps) {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-2 border-t border-slate-800 pt-4">
+        <div className="flex flex-col items-center gap-2 border-t border-slate-800 pt-4 text-center md:flex-row md:items-center md:justify-between md:text-left">
           <p className="text-sm text-slate-400">&copy; {new Date().getFullYear()} Mohsin Naqvi. All rights reserved.</p>
           <p className="text-sm text-slate-300">
             Made with <span className="text-red-500">❤</span> using Next.js & Tailwind CSS
