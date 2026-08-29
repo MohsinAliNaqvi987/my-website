@@ -56,7 +56,7 @@ export function ContactSection() {
   const isSubmitting = status === "submitting";
 
   return (
-    <section id="contact" className="section-padding bg-white">
+    <section id="contact" className="section-padding reveal-clip bg-white">
       <div className="mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-2">
         <div
           ref={detailsRef}
