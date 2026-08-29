@@ -57,29 +57,29 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="section-padding reveal-clip bg-white">
-      <div className="mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-2">
+      <div className="mx-auto grid w-full max-w-6xl gap-10 max-[400px]:gap-6 lg:grid-cols-2">
         <div
           ref={detailsRef}
-          className={`slide-in slide-from-left space-y-5 rounded-2xl bg-slate-900 p-7 text-slate-100 ${
+          className={`slide-in slide-from-left space-y-5 rounded-2xl bg-slate-900 p-7 text-slate-100 max-[400px]:space-y-4 max-[400px]:p-4 ${
             detailsVisible ? "is-visible" : ""
           }`}
         >
-          <h2 className="text-3xl font-bold">Contact</h2>
-          <p className="text-slate-300">
+          <h2 className="text-3xl font-bold max-[400px]:text-2xl">Contact</h2>
+          <p className="text-slate-300 max-[400px]:text-sm max-[400px]:leading-6">
             Feel free to reach out for opportunities, collaboration, or a quick hello.
           </p>
-          <ul className="space-y-3 text-sm" role="list">
+          <ul className="space-y-3 text-sm max-[400px]:space-y-2.5" role="list">
             <li>
               <a
                 href="mailto:mohsin.ali.naqvi987@gmail.com"
-                className="group flex items-center gap-3 rounded-xl border border-slate-700/60 bg-slate-800/50 p-3 transition hover:border-sky-500/50 hover:bg-slate-800"
+                className="group flex items-center gap-3 rounded-xl border border-slate-700/60 bg-slate-800/50 p-3 transition hover:border-sky-500/50 hover:bg-slate-800 max-[400px]:gap-2.5 max-[400px]:p-2.5"
               >
                 <span
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-sky-500/30 bg-sky-500/10 text-sky-400"
+                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-sky-500/30 bg-sky-500/10 text-sky-400 max-[400px]:h-10 max-[400px]:w-10"
                   aria-hidden
                 >
                   <svg
-                    className="h-7 w-7"
+                    className="h-7 w-7 max-[400px]:h-5 max-[400px]:w-5"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -94,21 +94,23 @@ export function ContactSection() {
                 </span>
                 <div className="min-w-0 text-left">
                   <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">Email</p>
-                  <p className="text-slate-100 group-hover:text-white">mohsin.ali.naqvi987@gmail.com</p>
+                  <p className="break-words text-slate-100 group-hover:text-white max-[400px]:text-xs">
+                    mohsin.ali.naqvi987@gmail.com
+                  </p>
                 </div>
               </a>
             </li>
             <li>
               <a
                 href="tel:+923335321812"
-                className="group flex items-center gap-3 rounded-xl border border-slate-700/60 bg-slate-800/50 p-3 transition hover:border-emerald-500/50 hover:bg-slate-800"
+                className="group flex items-center gap-3 rounded-xl border border-slate-700/60 bg-slate-800/50 p-3 transition hover:border-emerald-500/50 hover:bg-slate-800 max-[400px]:gap-2.5 max-[400px]:p-2.5"
               >
                 <span
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-emerald-500/30 bg-emerald-500/10 text-emerald-400"
+                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 max-[400px]:h-10 max-[400px]:w-10"
                   aria-hidden
                 >
                   <svg
-                    className="h-7 w-7"
+                    className="h-7 w-7 max-[400px]:h-5 max-[400px]:w-5"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -121,18 +123,20 @@ export function ContactSection() {
                 </span>
                 <div className="min-w-0 text-left">
                   <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">Phone</p>
-                  <p className="text-slate-100 group-hover:text-white">+92 333 5321812</p>
+                  <p className="text-slate-100 group-hover:text-white max-[400px]:text-xs">
+                    +92 333 5321812
+                  </p>
                 </div>
               </a>
             </li>
             <li>
-              <div className="flex items-center gap-3 rounded-xl border border-slate-700/60 bg-slate-800/50 p-3">
+              <div className="flex items-center gap-3 rounded-xl border border-slate-700/60 bg-slate-800/50 p-3 max-[400px]:gap-2.5 max-[400px]:p-2.5">
                 <span
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-amber-500/30 bg-amber-500/10 text-amber-400"
+                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-amber-500/30 bg-amber-500/10 text-amber-400 max-[400px]:h-10 max-[400px]:w-10"
                   aria-hidden
                 >
                   <svg
-                    className="h-7 w-7"
+                    className="h-7 w-7 max-[400px]:h-5 max-[400px]:w-5"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -146,7 +150,7 @@ export function ContactSection() {
                 </span>
                 <div className="min-w-0 text-left">
                   <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">Address</p>
-                  <p className="text-slate-100">Rawalpindi, Pakistan</p>
+                  <p className="text-slate-100 max-[400px]:text-xs">Rawalpindi, Pakistan</p>
                 </div>
               </div>
             </li>
@@ -155,18 +159,18 @@ export function ContactSection() {
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className={`slide-in slide-from-right relative rounded-2xl border border-slate-200 bg-slate-50 p-7 shadow-sm ${
+          className={`slide-in slide-from-right relative rounded-2xl border border-slate-200 bg-slate-50 p-7 shadow-sm max-[400px]:p-4 ${
             formVisible ? "is-visible" : ""
           }`}
         >
-          <h3 className="text-2xl font-bold text-slate-800">Get in Touch</h3>
+          <h3 className="text-2xl font-bold text-slate-800 max-[400px]:text-xl">Get in Touch</h3>
           <div className="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden="true">
             <label>
               Company URL
               <input type="text" name="company_url" tabIndex={-1} autoComplete="off" />
             </label>
           </div>
-          <div className="mt-6 space-y-4">
+          <div className="mt-6 space-y-4 max-[400px]:mt-4 max-[400px]:space-y-3">
             <label className="block">
               <span className="mb-2 block text-sm font-medium text-slate-700">Name</span>
               <input
@@ -178,7 +182,7 @@ export function ContactSection() {
                 placeholder="Your name"
                 autoComplete="name"
                 disabled={isSubmitting}
-                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-slate-500 disabled:opacity-60"
+                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-slate-500 disabled:opacity-60 max-[400px]:px-3 max-[400px]:py-2.5"
               />
             </label>
             <label className="block">
@@ -191,7 +195,7 @@ export function ContactSection() {
                 placeholder="you@example.com"
                 autoComplete="email"
                 disabled={isSubmitting}
-                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-slate-500 disabled:opacity-60"
+                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-slate-500 disabled:opacity-60 max-[400px]:px-3 max-[400px]:py-2.5"
               />
             </label>
             <label className="block">
@@ -204,7 +208,7 @@ export function ContactSection() {
                 maxLength={5000}
                 placeholder="Write your message..."
                 disabled={isSubmitting}
-                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-slate-500 disabled:opacity-60"
+                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-slate-500 disabled:opacity-60 max-[400px]:px-3 max-[400px]:py-2.5"
               />
             </label>
             {feedback ? (
@@ -213,8 +217,8 @@ export function ContactSection() {
                 aria-live="polite"
                 className={
                   status === "success"
-                    ? "rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800"
-                    : "rounded-lg border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800"
+                    ? "rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800 max-[400px]:px-3 max-[400px]:py-2.5 max-[400px]:text-xs"
+                    : "rounded-lg border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800 max-[400px]:px-3 max-[400px]:py-2.5 max-[400px]:text-xs"
                 }
               >
                 {feedback}
@@ -224,7 +228,7 @@ export function ContactSection() {
               type="submit"
               disabled={isSubmitting}
               aria-busy={isSubmitting}
-              className="cursor-pointer rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-60"
+              className="cursor-pointer rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-60 max-[400px]:w-full max-[400px]:px-5 max-[400px]:py-2.5"
             >
               {isSubmitting ? "Sending..." : "Send Message"}
             </button>
