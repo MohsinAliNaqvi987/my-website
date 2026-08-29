@@ -49,6 +49,82 @@ summary,
   @apply rounded-full px-3 py-1.5 transition hover:bg-slate-100 hover:text-slate-900;
 }
 
+/* dvh keeps the panel inside the visible area when mobile browser chrome shows/hides. */
+.project-modal-panel {
+  max-height: 85dvh;
+}
+
+@media (min-width: 640px) {
+  .project-modal-panel {
+    max-height: 92dvh;
+  }
+}
+
+@keyframes home-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* "both" keeps the element hidden until its staggered delay elapses. */
+.home-reveal {
+  animation: home-reveal 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes home-reveal-image {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.home-reveal-image {
+  animation: home-reveal-image 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.slide-in {
+  opacity: 0;
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.slide-in.slide-from-left {
+  transform: translateX(-2rem);
+}
+
+.slide-in.slide-from-right {
+  transform: translateX(2rem);
+}
+
+.slide-in.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-reveal,
+  .home-reveal-image {
+    animation: none;
+  }
+
+  .slide-in,
+  .slide-in.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 .skill-fill {
   height: 100%;
   border-radius: 999px;

@@ -1,4 +1,7 @@
+"use client";
+
 import type { ResumeItem } from "./data";
+import { useInViewOnce } from "./useInViewOnce";
 
 type ResumeSectionProps = {
   education: ResumeItem[];
@@ -12,20 +15,27 @@ type TimelineColors = {
   dotRing: string;
 };
 
+type SlideFrom = "left" | "right";
+
 function TimelineCard({
   item,
   colors,
   isFirst,
   isLast,
+  from,
+  delayMs,
 }: {
   item: ResumeItem;
   colors: TimelineColors;
   isFirst: boolean;
   isLast: boolean;
+  from: SlideFrom;
+  delayMs: number;
 }) {
+  const { ref, isVisible } = useInViewOnce<HTMLLIElement>(0.35);
+
   return (
-    <li className="relative pb-4 pl-10 last:pb-0">
-      {/* vertical rail: segment above node (connects to previous card) */}
+    <li ref={ref} className="relative pb-4 pl-10 last:pb-0">
       {!isFirst && (
         <span
           className={`pointer-events-none absolute left-[15px] top-0 z-0 w-0.5 -translate-x-1/2 ${colors.rail}`}
@@ -33,19 +43,22 @@ function TimelineCard({
           aria-hidden
         />
       )}
-      {/* vertical rail: segment below node (connects to next card) */}
       {!isLast && (
         <span
           className={`pointer-events-none absolute left-[15px] top-[1.5rem] bottom-0 z-0 w-0.5 -translate-x-1/2 ${colors.rail}`}
           aria-hidden
         />
       )}
-      {/* node */}
       <span
         className={`pointer-events-none absolute left-[15px] top-6 z-[1] h-3.5 w-3.5 -translate-x-1/2 rounded-full border-2 ${colors.dotBorder} ${colors.dotFill} shadow-sm ${colors.dotRing}`}
         aria-hidden
       />
-      <article className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+      <article
+        className={`slide-in rounded-xl border border-slate-200 bg-white p-5 shadow-sm ${
+          from === "left" ? "slide-from-left" : "slide-from-right"
+        } ${isVisible ? "is-visible" : ""}`}
+        style={{ transitionDelay: `${delayMs}ms` }}
+      >
         <h3 className="text-lg font-semibold text-slate-800">{item.title}</h3>
         <p className="text-sm font-medium text-sky-700">{item.subtitle}</p>
         <p className="mt-1 text-sm text-slate-500">{item.timeline}</p>
@@ -83,6 +96,8 @@ export function ResumeSection({ education, experience }: ResumeSectionProps) {
                 colors={experienceTimeline}
                 isFirst={index === 0}
                 isLast={index === experience.length - 1}
+                from="left"
+                delayMs={index * 120}
               />
             ))}
           </ol>
@@ -97,6 +112,8 @@ export function ResumeSection({ education, experience }: ResumeSectionProps) {
                 colors={educationTimeline}
                 isFirst={index === 0}
                 isLast={index === education.length - 1}
+                from="right"
+                delayMs={index * 120}
               />
             ))}
           </ol>

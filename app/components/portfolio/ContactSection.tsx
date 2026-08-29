@@ -1,12 +1,15 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { useInViewOnce } from "./useInViewOnce";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
 export function ContactSection() {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [feedback, setFeedback] = useState("");
+  const { ref: detailsRef, isVisible: detailsVisible } = useInViewOnce<HTMLDivElement>(0.25);
+  const { ref: formRef, isVisible: formVisible } = useInViewOnce<HTMLFormElement>(0.25);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -55,7 +58,12 @@ export function ContactSection() {
   return (
     <section id="contact" className="section-padding bg-white">
       <div className="mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-2">
-        <div className="space-y-5 rounded-2xl bg-slate-900 p-7 text-slate-100">
+        <div
+          ref={detailsRef}
+          className={`slide-in slide-from-left space-y-5 rounded-2xl bg-slate-900 p-7 text-slate-100 ${
+            detailsVisible ? "is-visible" : ""
+          }`}
+        >
           <h2 className="text-3xl font-bold">Contact</h2>
           <p className="text-slate-300">
             Feel free to reach out for opportunities, collaboration, or a quick hello.
@@ -145,8 +153,11 @@ export function ContactSection() {
           </ul>
         </div>
         <form
+          ref={formRef}
           onSubmit={handleSubmit}
-          className="relative rounded-2xl border border-slate-200 bg-slate-50 p-7 shadow-sm"
+          className={`slide-in slide-from-right relative rounded-2xl border border-slate-200 bg-slate-50 p-7 shadow-sm ${
+            formVisible ? "is-visible" : ""
+          }`}
         >
           <h3 className="text-2xl font-bold text-slate-800">Get in Touch</h3>
           <div className="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden="true">

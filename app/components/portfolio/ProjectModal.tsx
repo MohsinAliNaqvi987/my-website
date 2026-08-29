@@ -32,30 +32,27 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
 
   return (
     <div
-      className={`fixed inset-0 z-[70] flex items-end justify-center p-0 sm:items-center sm:p-6 ${
-        isOpen ? "pointer-events-auto" : "pointer-events-none"
-      }`}
+      className={`fixed inset-0 z-[70] flex items-center justify-center p-4 sm:p-6 ${isOpen ? "pointer-events-auto" : "pointer-events-none"
+        }`}
       aria-hidden={!isOpen}
     >
       <button
         type="button"
         aria-label="Close project details"
         onClick={onClose}
-        className={`absolute inset-0 bg-slate-950/50 backdrop-blur-[2px] transition-opacity duration-300 ${
-          isOpen ? "opacity-100" : "opacity-0"
-        }`}
+        className={`absolute inset-0 bg-slate-950/50 backdrop-blur-[2px] transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-0"
+          }`}
       />
 
       <div
         role="dialog"
         aria-modal="true"
         aria-labelledby="project-modal-title"
-        className={`relative z-10 flex max-h-[92vh] w-full max-w-2xl flex-col overflow-hidden rounded-t-2xl bg-white shadow-2xl transition-all duration-300 ease-out sm:rounded-2xl ${
-          isOpen ? "translate-y-0 scale-100 opacity-100" : "translate-y-8 scale-95 opacity-0"
-        }`}
+        className={`project-modal-panel relative z-10 flex w-full max-w-2xl flex-col overflow-hidden rounded-2xl bg-white shadow-2xl transition-all duration-300 ease-out ${isOpen ? "translate-y-0 scale-100 opacity-100" : "translate-y-8 scale-95 opacity-0"
+          }`}
       >
         <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-5">
-          <ProjectMedia src={project.image} alt={project.name} />
+          <ProjectMedia src={project.image} alt={project.name} zoomOnHover={false} />
 
           <h3 id="project-modal-title" className="mt-5 text-2xl font-bold text-slate-900 sm:text-3xl">
             {project.name}

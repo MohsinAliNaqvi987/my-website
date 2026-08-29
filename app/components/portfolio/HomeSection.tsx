@@ -10,18 +10,32 @@ export function HomeSection({ scrollToSection }: HomeSectionProps) {
     <section id="home" className="section-padding">
       <div className="mx-auto grid w-full max-w-6xl items-center gap-12 md:grid-cols-2">
         <div className="space-y-6">
-          <p className="inline-block rounded-full bg-black px-4 py-1 text-sm font-semibold text-white">
+          <p
+            className="home-reveal inline-block rounded-full bg-black px-4 py-1 text-sm font-semibold text-white"
+            style={{ animationDelay: "0ms" }}
+          >
             Welcome to my portfolio
           </p>
-          <h1 className="text-4xl font-extrabold leading-tight text-slate-900 sm:text-5xl">
+          <h1
+            className="home-reveal text-4xl font-extrabold leading-tight text-slate-900 sm:text-5xl"
+            style={{ animationDelay: "90ms" }}
+          >
             Hi, I&apos;m Mohsin Naqvi.
           </h1>
-          <h3 className="text-2xl font-bold">Full Stack MERN Developer</h3>
-          <p className="max-w-xl text-lg leading-8 text-slate-700">
+          <h3 className="home-reveal text-2xl font-bold" style={{ animationDelay: "180ms" }}>
+            Full Stack MERN Developer
+          </h3>
+          <p
+            className="home-reveal max-w-xl text-lg leading-8 text-slate-700"
+            style={{ animationDelay: "270ms" }}
+          >
             I build modern and responsive web experiences with a focus on clean design,
             performance, and user-friendly interfaces.
           </p>
-          <div className="flex flex-wrap items-center gap-3">
+          <div
+            className="home-reveal flex flex-wrap items-center gap-3"
+            style={{ animationDelay: "360ms" }}
+          >
             <button
               type="button"
               onClick={() => scrollToSection("contact")}
@@ -38,7 +52,7 @@ export function HomeSection({ scrollToSection }: HomeSectionProps) {
             </a>
           </div>
         </div>
-        <div className="flex justify-center md:justify-end">
+        <div className="home-reveal-image flex justify-center md:justify-end" style={{ animationDelay: "180ms" }}>
           <Image
             src="/profile.jpg"
             alt="Portrait of Mohsin Naqvi"
