@@ -11,7 +11,7 @@ export function AboutSection() {
         <h2 className="section-title text-center">About Me</h2>
         <p
           ref={ref}
-          className={`section-text slide-in slide-from-left ${isVisible ? "is-visible" : ""}`}
+          className={`section-text text-center slide-in slide-from-left ${isVisible ? "is-visible" : ""}`}
         >
           I&apos;m a dedicated Full Stack Software Engineer with over 5 years of experience in
           developing innovative web applications utilizing the MERN stack and Laravel. My expertise
