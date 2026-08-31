@@ -8,6 +8,7 @@ import {
   SiFirebase,
   SiGit,
   SiJavascript,
+  SiLaravel,
   SiMongodb,
   SiNestjs,
   SiNextdotjs,
@@ -16,6 +17,7 @@ import {
   SiRedux,
   SiTypescript,
   SiVercel,
+  SiVuedotjs,
 } from "react-icons/si";
 import { useInViewOnce } from "./useInViewOnce";
 
@@ -31,9 +33,11 @@ type Technology = {
 const technologies: Technology[] = [
   { name: "React.js", icon: SiReact, color: "#087EA4" },
   { name: "Next.js", icon: SiNextdotjs, color: "#0F172A" },
+  { name: "Vue.js", icon: SiVuedotjs, color: "#42B883" },
   { name: "Redux", icon: SiRedux, color: "#764ABC" },
   { name: "Node.js", icon: SiNodedotjs, color: "#5FA04E" },
   { name: "NestJS", icon: SiNestjs, color: "#E0234E" },
+  { name: "Laravel", icon: SiLaravel, color: "#FF2D20" },
   { name: "JavaScript", icon: SiJavascript, color: "#CA8A04" },
   { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
   { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
@@ -45,8 +49,8 @@ const technologies: Technology[] = [
   { name: "Git", icon: SiGit, color: "#F05032" },
 ];
 
-/* Flex rather than grid so the final short row stays centred: 14 cards never divide
-   evenly into the column counts below. Each width subtracts its share of the row gap
+/* Flex rather than grid so the final short row stays centred: 16 cards never divide
+   evenly into the 5-column desktop layout. Each width subtracts its share of the row gap
    plus a few px of slack, so sub-pixel rounding can't push a card onto the next row. */
 const cardWidth =
   "w-[calc(50%_-_0.4rem)] sm:w-[calc(33.333%_-_0.7rem)] md:w-[calc(25%_-_0.8rem)] lg:w-[calc(20%_-_0.85rem)]";
