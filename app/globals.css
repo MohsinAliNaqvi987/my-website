@@ -117,9 +117,73 @@ summary,
   transform: translateX(0);
 }
 
+/* Fades items in and out at the ends without touching the bar's own border or
+   background, which sit on the wrapping element. */
+.tech-marquee {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 1.25rem,
+    #000 calc(100% - 1.25rem),
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 1.25rem,
+    #000 calc(100% - 1.25rem),
+    transparent
+  );
+}
+
+/* Two identical groups sit side by side, so shifting the track by half its width
+   lands on a pixel-identical frame and the loop has no seam. Spacing lives inside
+   the items rather than as a flex gap, so the groups tile exactly. */
+.tech-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: tech-marquee 30s linear infinite;
+}
+
+@keyframes tech-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 640px) {
+  .tech-marquee {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 3rem,
+      #000 calc(100% - 3rem),
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 3rem,
+      #000 calc(100% - 3rem),
+      transparent
+    );
+  }
+
+  .tech-marquee-track {
+    animation-duration: 42s;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .home-reveal,
   .home-reveal-image {
+    animation: none;
+  }
+
+  .tech-marquee-track {
     animation: none;
   }
 

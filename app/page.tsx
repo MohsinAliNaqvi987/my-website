@@ -10,6 +10,7 @@ import { Navbar } from "./components/portfolio/Navbar";
 import { PortfolioSection } from "./components/portfolio/PortfolioSection";
 import { ResumeSection } from "./components/portfolio/ResumeSection";
 import { SkillsSection } from "./components/portfolio/SkillsSection";
+import { TechnologiesSection } from "./components/portfolio/TechnologiesSection";
 import { education, experience, projectPlaceholders } from "./components/portfolio/data";
 import type { SectionId } from "./components/portfolio/types";
 
@@ -46,6 +47,7 @@ export default function Home() {
         <AboutSection />
         <PortfolioSection projectPlaceholders={projectPlaceholders} />
         <SkillsSection />
+        <TechnologiesSection />
         <ResumeSection education={education} experience={experience} />
         <ContactSection />
       </main>

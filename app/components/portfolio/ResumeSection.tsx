@@ -84,7 +84,7 @@ const educationTimeline: TimelineColors = {
 
 export function ResumeSection({ education, experience }: ResumeSectionProps) {
   return (
-    <section id="resume" className="section-padding reveal-clip">
+    <section id="resume" className="section-padding reveal-clip bg-white">
       <div className="mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-2">
         <div>
           <h2 className="section-title">Experience</h2>
