@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import type { Project } from "./data";
 import { ProjectMedia } from "./ProjectMedia";
+import { ProjectStackBadge } from "./ProjectStackBadge";
 
 type ProjectModalProps = {
   project: Project | null;
@@ -54,7 +55,8 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
         <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-5">
           <ProjectMedia src={project.image} alt={project.name} zoomOnHover={false} />
 
-          <h3 id="project-modal-title" className="mt-5 text-2xl font-bold text-slate-900 sm:text-3xl">
+          <ProjectStackBadge label={project.stackBadge} className="mt-5" />
+          <h3 id="project-modal-title" className="text-2xl font-bold text-slate-900 sm:text-3xl">
             {project.name}
           </h3>
 

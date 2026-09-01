@@ -20,6 +20,7 @@ export type Project = {
   name: string;
   description: string;
   image: string;
+  stackBadge: string;
   technologies: string[];
   link?: string;
 };
@@ -71,6 +72,7 @@ export const projectPlaceholders: Project[] = [
     name: "Technical Evaluation Management System, ZONG",
     description: `Developed a Technical Evaluation Management System (TEMS) for Zong to streamline vendor technical evaluations and collaboration between internal teams and external vendors. Built the frontend using React.js with Next.js and backend using Laravel, implementing role-based workflows for Super Admins, Admins, Sourcing Buyers, Experts, and Vendors to manage evaluations efficiently.`,
     image: "/TEMS.png",
+    stackBadge: "Next.js / Laravel",
     technologies: ["Next.js", "Laravel", "MySQL", "Docker", "MinIO (S3 compatible storage)", "Swagger/OpenAPI"],
   },
   {
@@ -80,6 +82,7 @@ export const projectPlaceholders: Project[] = [
     Backend: API Gateway (Routing, Rate limiting, Authentication), Auth (JWT, Roles, Permissions, Employees), CMS (Content, Categories, Reservoirs), and Assets (File storage, S3). Stack: NestJS, MongoDB, Redis, AWS S3, TypeScript.
     Frontend: Public website (React.js, Material-UI, Redux/Saga, data grids, rich editor, PDF/Excel export).`,
     image: "/Wapda.jpg",
+    stackBadge: "React.js / NestJS",
     technologies: ["React.js", "Material-UI", "Redux/Saga", "TypeScript", "NestJS", "MongoDB", "Redis", "AWS S3"],
   },
   {
@@ -88,6 +91,7 @@ export const projectPlaceholders: Project[] = [
     description: `Frontend: React.js with Redux & Redux-Saga for state management, React Router, Material-UI, Axios, and i18next for localization. Containerized deployment using Docker.
     Backend: Node.js and Express.js with REST APIs secured via JWT authentication. Database management using MySQL with Knex.js & Bookshelf ORM, Redis for caching, and Swagger/OpenAPI for API documentation. Integrated Firebase Admin for push notifications.`,
     image: "/jazz-tunes.jpg",
+    stackBadge: "React.js / Node.js",
     technologies: ["React.js", "Node.js", "Redux", "Redis", "Docker", "Express.js", "MySQL", "Firebase", "Knex.js", "Bookshelf ORM", "Swagger/OpenAPI"],
   },
   {
@@ -95,6 +99,7 @@ export const projectPlaceholders: Project[] = [
     name: "Froebel's International Management System (FIMS)",
     description: `FIMS (Froebel's International Management System) is a multi-campus school operations platform built for Froebel's International School to run admissions, academics, and administration from one place. It covers the full student lifecycle — applications, enrollment, attendance, exams, grades, fees, and transfers — alongside HR, payroll, accounts, and campus operations, with role-based access keeping admins, principals, teachers, staff, and parents scoped to the right data and reporting rolled up across branches. The frontend is a Vue.js SPA (Vuex, Vue Router, Bootstrap Vue) consuming a Laravel REST API secured with OAuth2 through Passport, spanning ~350 endpoints and 100+ Eloquent models on MySQL. Personally identifiable data such as CNICs, phone and passport numbers is encrypted at rest, with audit trails on critical records. Heavier work — report cards, fee vouchers, assessments, and ID cards — runs on queued jobs with PDF/Excel/Word generation, S3 document storage, and real-time notifications over Pusher/WebSockets.`,
     image: "/FIMS.jpg",
+    stackBadge: "Vue.js / Laravel",
     technologies: ["Vue.js", "Laravel", "MySQL", "Docker", "S3 Compatible Storage"],
   }
 ];

@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import type { Project } from "./data";
 import { ProjectMedia } from "./ProjectMedia";
 import { ProjectModal } from "./ProjectModal";
+import { ProjectStackBadge } from "./ProjectStackBadge";
 
 type PortfolioSectionProps = {
   projectPlaceholders: Project[];
@@ -68,6 +69,7 @@ export function PortfolioSection({ projectPlaceholders }: PortfolioSectionProps)
               className="cursor-pointer rounded-2xl border border-dashed border-slate-300 bg-white p-5 text-left shadow-sm transition hover:border-slate-400 hover:shadow-md"
             >
               <ProjectMedia src={project.image} alt={project.name} className="mb-4" />
+              <ProjectStackBadge label={project.stackBadge} />
               <h3 className="text-lg font-semibold text-slate-800">{project.name}</h3>
               <p className="mt-2 text-sm leading-6 text-slate-600">
                 {getCardDescription(project.description)}
